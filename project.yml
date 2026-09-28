@@ -1,0 +1,45 @@
+name: SwingScreener
+options:
+  bundleIdPrefix: com.fahad9101
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.10"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  SwingScreener:
+    type: application
+    platform: iOS
+    sources: [SwingScreener]
+    info:
+      path: SwingScreener/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Swing Screener
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.fahad9101.swingscreener
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGNING_ALLOWED: NO
+  SwingScreenerTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [SwingScreenerTests]
+    dependencies:
+      - target: SwingScreener
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGNING_ALLOWED: NO
+schemes:
+  SwingScreener:
+    build:
+      targets:
+        SwingScreener: all
+        SwingScreenerTests: [test]
+    test:
+      targets: [SwingScreenerTests]

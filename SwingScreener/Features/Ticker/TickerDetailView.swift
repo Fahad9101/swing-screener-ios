@@ -35,6 +35,7 @@ struct TickerDetailView: View {
         }
         .navigationTitle(model.symbol)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar { ToolbarItem(placement: .topBarTrailing) { WatchlistToggle(symbol: model.symbol) } }
         .refreshable { await model.load() }
         .task { if case .idle = model.state { await model.load() } }
         .safeAreaInset(edge: .bottom) { DisclaimerFooter() }

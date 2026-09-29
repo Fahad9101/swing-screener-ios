@@ -89,4 +89,5 @@ struct OpportunityRow: View {
 
 #Preview {
     ShortlistView()
+        .environment(AuthStore(persist: false))
 }

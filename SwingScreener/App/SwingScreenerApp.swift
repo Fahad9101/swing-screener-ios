@@ -2,9 +2,12 @@ import SwiftUI
 
 @main
 struct SwingScreenerApp: App {
+    @State private var auth = AuthStore()
+
     var body: some Scene {
         WindowGroup {
             RootView()
+                .environment(auth)
         }
     }
 }
@@ -16,6 +19,8 @@ struct RootView: View {
                 .tabItem { Label("Shortlist", systemImage: "list.number") }
             CatalystCalendarView()
                 .tabItem { Label("Catalysts", systemImage: "calendar") }
+            WatchlistView()
+                .tabItem { Label("Watchlist", systemImage: "star") }
         }
     }
 }

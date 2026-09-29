@@ -13,6 +13,12 @@ enum APIError: LocalizedError, Equatable {
         }
     }
 
+    /// The access token was missing, expired or rejected, so the user must sign in again.
+    var needsSignIn: Bool {
+        guard case .server(_, _, let status) = self else { return false }
+        return status == 401
+    }
+
     var code: String? {
         if case .server(let code, _, _) = self { return code }
         return nil
@@ -53,6 +59,34 @@ struct APIClient {
         ])
     }
 
+    // MARK: Sign-in (relayed by the API to Supabase Auth; the app holds no key)
+
+    func sendEmailCode(to email: String) async throws {
+        _ = try await send(EmptyResponse.self, "POST", "auth/email-code", body: ["email": email])
+    }
+
+    func verify(email: String, code: String) async throws -> AuthSession {
+        try await send(AuthSession.self, "POST", "auth/verify", body: ["email": email, "code": code])
+    }
+
+    func refresh(_ refreshToken: String) async throws -> AuthSession {
+        try await send(AuthSession.self, "POST", "auth/refresh", body: ["refresh_token": refreshToken])
+    }
+
+    // MARK: Watchlist (needs a signed-in access token)
+
+    func watchlist(token: String) async throws -> WatchlistResponse {
+        try await send(WatchlistResponse.self, "GET", "watchlist", token: token)
+    }
+
+    func addToWatchlist(_ symbol: String, note: String? = nil, token: String) async throws -> WatchlistItem {
+        try await send(WatchlistItem.self, "PUT", "watchlist/\(symbol.uppercased())", body: note.map { ["note": $0] }, token: token)
+    }
+
+    func removeFromWatchlist(_ symbol: String, token: String) async throws {
+        _ = try await send(EmptyResponse.self, "DELETE", "watchlist/\(symbol.uppercased())", token: token)
+    }
+
     func url(_ path: String, query: [URLQueryItem] = []) -> URL {
         var components = URLComponents(url: baseURL.appendingPathComponent("api/v1/\(path)"), resolvingAgainstBaseURL: false)!
         components.queryItems = query.isEmpty ? nil : query
@@ -60,9 +94,19 @@ struct APIClient {
     }
 
     func get<T: Decodable>(_ path: String, query: [URLQueryItem] = []) async throws -> T {
+        try await send(T.self, "GET", path, query: query)
+    }
+
+    func send<T: Decodable>(_ type: T.Type, _ method: String, _ path: String, query: [URLQueryItem] = [], body: [String: String]? = nil, token: String? = nil) async throws -> T {
         var request = URLRequest(url: url(path, query: query))
+        request.httpMethod = method
         request.timeoutInterval = 90
         request.setValue("application/json", forHTTPHeaderField: "Accept")
+        if let token { request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization") }
+        if let body {
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = try JSONEncoder().encode(body)
+        }
         let data: Data
         let response: URLResponse
         do {
@@ -80,6 +124,7 @@ struct APIClient {
             }
             throw APIError.server(code: "HTTP_\(status)", message: "The server returned an error (\(status)).", status: status)
         }
+        if T.self == EmptyResponse.self, let empty = EmptyResponse() as? T { return empty }
         do {
             return try decoder.decode(T.self, from: data)
         } catch {

@@ -179,6 +179,36 @@ struct MarketData: Decodable, Hashable {
     let relativeVolume: Double?
 }
 
+struct EmptyResponse: Decodable {}
+
+struct AuthSession: Codable, Equatable {
+    struct User: Codable, Equatable {
+        let id: String?
+        let email: String?
+    }
+    let accessToken: String
+    let refreshToken: String
+    let expiresIn: Double?
+    let user: User
+}
+
+struct WatchlistResponse: Decodable, Freshness {
+    let dataAsOf: String?
+    let stale: Bool
+    let count: Int
+    let data: [WatchlistItem]
+}
+
+struct WatchlistItem: Decodable, Identifiable, Hashable {
+    var id: String { ticker }
+    let ticker: String
+    let note: String?
+    let addedAt: String
+    let onShortlist: Bool?
+    let opportunityScore: Double?
+    let nextCatalyst: CatalystEvent?
+}
+
 struct APIErrorEnvelope: Decodable {
     struct Body: Decodable {
         let code: String

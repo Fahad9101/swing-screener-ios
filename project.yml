@@ -22,6 +22,10 @@ targets:
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         # Public read-only API (not a secret). Render's free plan sleeps when idle.
         SSAPIBaseURL: https://soe-api-7eyh.onrender.com
+        # The sign-in email's Log In link opens swingscreener://auth-callback#access_token=...
+        CFBundleURLTypes:
+          - CFBundleURLName: com.fahad9101.swingscreener
+            CFBundleURLSchemes: [swingscreener]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.fahad9101.swingscreener

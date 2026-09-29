@@ -13,7 +13,7 @@ open SwingScreener.xcodeproj
 The `.xcodeproj` is generated from `project.yml` and is not committed.
 
 ## Try it in a browser (no Mac needed)
-Every push to `main` runs the **Simulator build** workflow, which uploads `SwingScreener-simulator.zip`. Download it from the workflow run's Artifacts, unzip the outer download once so you have `SwingScreener-simulator.zip`, and upload that file at https://appetize.io/upload to run the app in a simulated iPhone.
+Every push to `main` runs the **Simulator build** workflow, which uploads an artifact named `SwingScreener-download`. Download it from the workflow run's Artifacts, extract it once so you have `UPLOAD-THIS-to-Appetize.zip`, and upload that file (without unzipping it) at https://appetize.io/upload to run the app in a simulated iPhone.
 
 ## Run on your iPhone with a free Apple ID
 1. In Xcode, open **Settings > Accounts** and add your Apple ID.

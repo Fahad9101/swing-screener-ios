@@ -34,9 +34,9 @@ jobs:
       - name: Zip the app
         run: |
           cd build/Build/Products/Release-iphonesimulator
-          ditto -c -k --sequesterRsrc --keepParent SwingScreener.app "$GITHUB_WORKSPACE/SwingScreener-simulator.zip"
+          ditto -c -k --sequesterRsrc --keepParent SwingScreener.app "$GITHUB_WORKSPACE/UPLOAD-THIS-to-Appetize.zip"
       - uses: actions/upload-artifact@v4
         with:
-          name: SwingScreener-simulator
-          path: SwingScreener-simulator.zip
+          name: SwingScreener-download
+          path: UPLOAD-THIS-to-Appetize.zip
           retention-days: 30

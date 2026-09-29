@@ -8,6 +8,7 @@ struct SwingScreenerApp: App {
         WindowGroup {
             RootView()
                 .environment(auth)
+                .onOpenURL { url in _ = auth.handle(url: url) }
         }
     }
 }

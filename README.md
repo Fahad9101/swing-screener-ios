@@ -12,6 +12,14 @@ open SwingScreener.xcodeproj
 ```
 The `.xcodeproj` is generated from `project.yml` and is not committed.
 
+## Run on your iPhone with a free Apple ID
+1. In Xcode, open **Settings > Accounts** and add your Apple ID.
+2. Select the **SwingScreener** target, open **Signing & Capabilities**, and choose your Personal Team.
+3. Plug in the iPhone, pick it as the run destination, and press Run.
+4. On the iPhone, turn on **Settings > Privacy & Security > Developer Mode**, and trust the developer under **Settings > General > VPN & Device Management**.
+
+Free-account installs expire after 7 days; press Run again to reinstall.
+
 ## Rules
 - API keys never ship in the app. The app talks only to the hosted SOE API.
 - The plan, progress and session prompt live in `docs/`.

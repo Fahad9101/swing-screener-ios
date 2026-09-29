@@ -20,6 +20,8 @@ targets:
         CFBundleDisplayName: Swing Screener
         UILaunchScreen: {}
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        # Public read-only API (not a secret). Render's free plan sleeps when idle.
+        SSAPIBaseURL: https://soe-api-7eyh.onrender.com
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.fahad9101.swingscreener

@@ -1,0 +1,549 @@
+{
+ "scan_run_id": "59e9f80d-97f8-4419-b632-269c8d6a1608",
+ "data_as_of": "2026-09-29T09:47:47.459667",
+ "stale": false,
+ "ticker": "RERATE",
+ "disclaimer": "Screening tool, not financial advice.",
+ "company": "Synthetic Recovery Co",
+ "exchange": "NYSE",
+ "sector": "Industrials",
+ "industry": "Airlines",
+ "market_cap": 12000000000.0,
+ "is_biotech": false,
+ "on_shortlist": true,
+ "opportunity_score": 75.0,
+ "score_breakdown": {
+  "catalyst": {
+   "score": 20.0,
+   "maximum": 25.0,
+   "components": {
+    "type": "EARNINGS",
+    "title": "Synthetic quarterly earnings",
+    "materiality": 7,
+    "timing": 5,
+    "date_confidence": 5,
+    "surprise": 3,
+    "days": 18
+   },
+   "available": true,
+   "available_points": null
+  },
+  "fundamental": {
+   "score": 15.0,
+   "maximum": 20.0,
+   "components": {
+    "revenue_trajectory": 3,
+    "margin_trajectory": 4,
+    "eps_fcf_trajectory": 4,
+    "business_quality": 4
+   },
+   "available": true,
+   "available_points": 20.0
+  },
+  "valuation": {
+   "score": 14.0,
+   "maximum": 20.0,
+   "components": {
+    "expected_swing_upside": 8,
+    "fundamental_valuation_support": 6,
+    "upside_input": 0.28,
+    "undervaluation_input": 0.19
+   },
+   "available": true,
+   "available_points": 20.0
+  },
+  "technical": {
+   "score": 8.0,
+   "maximum": 15.0,
+   "components": {
+    "trend": 4,
+    "pullback": 4,
+    "rsi": 0,
+    "volume": 0
+   },
+   "available": true,
+   "available_points": 15.0
+  },
+  "revisions": {
+   "score": 9.0,
+   "maximum": 10.0,
+   "components": {
+    "eps_revisions": 5,
+    "revenue_ebitda_revisions": 4,
+    "eps_breadth": 0.8,
+    "revenue_breadth": 0.7,
+    "ebitda_breadth": 0.75
+   },
+   "available": true,
+   "available_points": 10.0
+  },
+  "balance_sheet": {
+   "score": 4.0,
+   "maximum": 5.0,
+   "components": {
+    "cash": 2000000000.0,
+    "debt": 2300000000.0,
+    "ebitda": 1500000000.0
+   },
+   "available": true,
+   "available_points": null
+  },
+  "liquidity": {
+   "score": 5.0,
+   "maximum": 5.0,
+   "components": {
+    "dollar_volume": 3,
+    "institutional_ownership": 2,
+    "institutional_ownership_available": true
+   },
+   "available": true,
+   "available_points": 5.0
+  },
+  "base_opportunity_score": 75.0,
+  "penalty_points": 0,
+  "multi_scanner_bonus": 0,
+  "opportunity_score": 75.0
+ },
+ "data_completeness": {
+  "market_data": true,
+  "fundamentals": false,
+  "estimates": false,
+  "catalyst_data": true,
+  "available_score_points": 100.0,
+  "total_score_points": 100.0,
+  "market_data_pct": 100.0,
+  "fundamental_pct": 57.89,
+  "estimate_pct": 50.0,
+  "catalyst_pct": 100.0,
+  "overall_pct": 76.97,
+  "stale_fields": [],
+  "missing_fields": {
+   "market": [],
+   "fundamental": [
+    "revenue",
+    "forward_revenue_growth",
+    "eps",
+    "forward_eps",
+    "gross_margin",
+    "net_debt",
+    "interest_coverage",
+    "shares_outstanding"
+   ],
+   "estimate": [
+    "forward_revenue",
+    "forward_ebitda",
+    "eps_revision_30d",
+    "eps_revision_90d",
+    "revenue_revision_30d",
+    "revenue_revision_90d",
+    "ebitda_revision_30d",
+    "ebitda_revision_90d"
+   ],
+   "calendar": []
+  },
+  "availability": {
+   "market": "available",
+   "fundamentals": "partial",
+   "estimates": "partial",
+   "scored_catalysts": "available",
+   "calendar": "unavailable"
+  }
+ },
+ "scanners": [
+  {
+   "scanner": "BIOTECH_CATALYST",
+   "qualified": false,
+   "conditions_met": 2,
+   "conditions_total": 6,
+   "evidence": {
+    "conditions": {
+     "is_biotech": false,
+     "cash_runway_eligible": null,
+     "technical_path_1": true,
+     "technical_path_2": false,
+     "catalyst_exception_path_3": false,
+     "verified_grade_a_or_b_catalyst": true
+    },
+    "evaluation_status": "COMPLETE",
+    "incomplete_fields": [],
+    "cash_runway_months": null,
+    "financing_secured": null,
+    "runway_reject": false,
+    "nearest_grade_a_days": 18
+   }
+  },
+  {
+   "scanner": "GROWTH_PULLBACK",
+   "qualified": false,
+   "conditions_met": 4,
+   "conditions_total": 5,
+   "evidence": {
+    "conditions": {
+     "revenue_growth": false,
+     "growth_driver": true,
+     "no_guidance_deterioration": true,
+     "no_strong_negative_revisions": true,
+     "balance_sheet_not_distressed": true
+    },
+    "evaluation_status": "COMPLETE",
+    "incomplete_fields": [],
+    "driver_conditions": {
+     "forward_eps_growth": true,
+     "fcf_growth": true,
+     "margin_expansion": true,
+     "forward_ebitda_growth": true
+    },
+    "pullback_pct": 0.06116765457878775,
+    "preferred_pullback": true,
+    "sweet_spot": false,
+    "large_cap_threshold_used": false
+   }
+  },
+  {
+   "scanner": "RERATING",
+   "qualified": true,
+   "conditions_met": 6,
+   "conditions_total": 6,
+   "evidence": {
+    "conditions": {
+     "forward_eps_growth": true,
+     "revenue_growth_qoq": true,
+     "margin_improving": true,
+     "fcf_or_ebitda_improving": true,
+     "positive_revisions": true,
+     "valuation_discount": true
+    },
+    "evaluation_status": "COMPLETE",
+    "incomplete_fields": [],
+    "technical_requirement": true,
+    "price": 45.6787,
+    "sma50": 46.789362000000004,
+    "sma200": 43.5712575
+   }
+  }
+ ],
+ "catalysts": [
+  {
+   "ticker": "RERATE",
+   "kind": "catalyst",
+   "type": "EARNINGS",
+   "title": "Synthetic quarterly earnings",
+   "event_date": "2026-10-17",
+   "window_start": null,
+   "window_end": null,
+   "timing": null,
+   "status": "confirmed",
+   "date_confidence": "A",
+   "verified": true,
+   "source": "synthetic_fixture",
+   "source_url": null,
+   "last_checked": "2026-09-29T09:47:47.138381Z",
+   "stale": false,
+   "summary": "Regression-only confirmed earnings date."
+  }
+ ],
+ "red_flags": [],
+ "validation_issues": [],
+ "market": {
+  "source": "fixture",
+  "as_of": "2026-09-29T00:00:00",
+  "fetched_at": "2026-09-29T09:47:47.432286",
+  "stale": false,
+  "data": {
+   "source": "fixture",
+   "as_of": "2026-09-29T00:00:00Z",
+   "fetched_at": "2026-09-29T09:47:47.432286Z",
+   "stale": false,
+   "ticker": "RERATE",
+   "price": 45.6787,
+   "previous_close": 45.6822,
+   "volume": 4480000.0,
+   "avg_volume_20d": 4095000.0,
+   "avg_dollar_volume_20d": 190005834.9,
+   "relative_volume": 1.0940170940170941,
+   "sma20": 46.39585,
+   "sma50": 46.789362000000004,
+   "sma200": 43.5712575,
+   "sma50_slope_20d": 0.007205351284608091,
+   "sma200_slope_20d": 0.018018132209098682,
+   "rsi14": 0.0,
+   "atr14": 1.219192857142858,
+   "high20d": 48.372,
+   "high50d": 48.6548,
+   "high52w": 48.6548,
+   "low52w": 36.3802,
+   "return1d": -7.661627504806923e-05,
+   "return3d": -0.0009208062851042698,
+   "return5d": -0.002840065664239111,
+   "return20d": -0.04577406679353835,
+   "distance_from_sma20_pct": -0.015457201452285144,
+   "distance_from_sma50_pct": -0.023737489731106075,
+   "distance_from_sma200_pct": 0.04836772268966526,
+   "pullback_from_50d_high_pct": 0.06116765457878775,
+   "trading_days": 260,
+   "stable_sessions": 20,
+   "new_52w_low_last_10": false,
+   "low_volume_pullback": false,
+   "accumulation_evidence": false,
+   "reversal_rvol": false,
+   "field_provenance": {
+    "price": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "previous_close": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "volume": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "avg_volume_20d": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "avg_dollar_volume_20d": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "relative_volume": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "sma20": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "sma50": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "sma200": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "sma50_slope_20d": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "sma200_slope_20d": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "rsi14": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "atr14": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "high20d": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "high50d": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "high52w": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "low52w": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "return1d": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "return3d": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "return5d": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "return20d": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "distance_from_sma20_pct": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "distance_from_sma50_pct": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "distance_from_sma200_pct": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    },
+    "pullback_from_50d_high_pct": {
+     "source": "fixture",
+     "as_of": "2026-09-29T00:00:00Z",
+     "fetched_at": "2026-09-29T09:47:47.432286Z",
+     "stale": false,
+     "raw_field": "daily_ohlcv"
+    }
+   }
+  }
+ },
+ "fundamentals": {
+  "source": "synthetic_fixture",
+  "as_of": "2026-09-29T09:47:47.138381",
+  "fetched_at": "2026-09-29T09:47:47.138381",
+  "stale": false,
+  "data": {
+   "source": "synthetic_fixture",
+   "as_of": "2026-09-29T09:47:47.138381Z",
+   "fetched_at": "2026-09-29T09:47:47.138381Z",
+   "stale": false,
+   "ticker": "RERATE",
+   "revenue": null,
+   "revenue_growth": 0.12,
+   "revenue_growth_qoq": 0.04,
+   "forward_revenue_growth": null,
+   "eps_growth": 0.18,
+   "eps": null,
+   "forward_eps": null,
+   "fcf_growth": 0.2,
+   "forward_ebitda_growth": 0.16,
+   "operating_margin": 0.12,
+   "operating_margin_prior": 0.09,
+   "gross_margin": null,
+   "gross_margin_prior": null,
+   "operating_margin_expansion_bps": 300.0,
+   "fcf": 900000000.0,
+   "ebitda": 1500000000.0,
+   "cash": 2000000000.0,
+   "debt": 2300000000.0,
+   "net_debt": null,
+   "interest_coverage": null,
+   "shares_outstanding": null,
+   "cash_runway_months": null,
+   "financing_secured": null,
+   "institutional_ownership": 0.64,
+   "short_float": 0.07,
+   "business_quality_score": 4,
+   "clinical_evidence_quality": null,
+   "pipeline_event_importance": null,
+   "external_validation": null,
+   "balance_sheet_distressed": false,
+   "guidance_deterioration": false,
+   "valuation_discount": true,
+   "expected_swing_upside": 0.28,
+   "fundamental_undervaluation": 0.19,
+   "raw": {},
+   "field_provenance": {}
+  }
+ },
+ "estimates": {
+  "source": "synthetic_fixture",
+  "as_of": "2026-09-29T09:47:47.138381",
+  "fetched_at": "2026-09-29T09:47:47.138381",
+  "stale": false,
+  "data": {
+   "source": "synthetic_fixture",
+   "as_of": "2026-09-29T09:47:47.138381Z",
+   "fetched_at": "2026-09-29T09:47:47.138381Z",
+   "stale": false,
+   "ticker": "RERATE",
+   "forward_eps_growth": 0.21,
+   "eps_up_revisions": 8,
+   "eps_down_revisions": 2,
+   "revenue_up_revisions": 7,
+   "revenue_down_revisions": 3,
+   "ebitda_up_revisions": 6,
+   "ebitda_down_revisions": 2,
+   "eps_revision_magnitude": 0.08,
+   "revenue_revision_magnitude": 0.03,
+   "analyst_count": 18,
+   "forward_revenue": null,
+   "forward_ebitda": null,
+   "eps_revision_30d": null,
+   "eps_revision_90d": null,
+   "revenue_revision_30d": null,
+   "revenue_revision_90d": null,
+   "ebitda_revision_30d": null,
+   "ebitda_revision_90d": null,
+   "field_provenance": {}
+  }
+ }
+}

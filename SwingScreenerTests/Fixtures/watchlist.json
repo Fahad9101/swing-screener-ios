@@ -1,0 +1,34 @@
+{
+ "scan_run_id": "59e9f80d-97f8-4419-b632-269c8d6a1608",
+ "data_as_of": "2026-09-29T09:47:47.459667",
+ "stale": false,
+ "disclaimer": "Screening tool, not financial advice.",
+ "count": 1,
+ "data": [
+  {
+   "ticker": "RERATE",
+   "note": "breakout",
+   "added_at": "2026-09-29T09:47:47.514668",
+   "on_shortlist": true,
+   "opportunity_score": 75.0,
+   "next_catalyst": {
+    "ticker": "RERATE",
+    "kind": "catalyst",
+    "type": "EARNINGS",
+    "title": "Synthetic quarterly earnings",
+    "event_date": "2026-10-17",
+    "window_start": null,
+    "window_end": null,
+    "timing": null,
+    "status": "confirmed",
+    "date_confidence": "A",
+    "verified": true,
+    "source": "synthetic_fixture",
+    "source_url": null,
+    "last_checked": "2026-09-29T09:47:47.138381Z",
+    "stale": false,
+    "summary": "Regression-only confirmed earnings date."
+   }
+  }
+ ]
+}

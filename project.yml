@@ -30,7 +30,9 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.fahad9101.swingscreener
         GENERATE_INFOPLIST_FILE: YES
-        CODE_SIGNING_ALLOWED: NO
+        # Automatic signing so the app installs on a device with a free Apple ID
+        # (pick your team under Signing & Capabilities). CI passes CODE_SIGNING_ALLOWED=NO.
+        CODE_SIGN_STYLE: Automatic
   SwingScreenerTests:
     type: bundle.unit-test
     platform: iOS
@@ -40,7 +42,7 @@ targets:
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
-        CODE_SIGNING_ALLOWED: NO
+        CODE_SIGN_STYLE: Automatic
 schemes:
   SwingScreener:
     build:

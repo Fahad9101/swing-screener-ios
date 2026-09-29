@@ -12,6 +12,17 @@ open SwingScreener.xcodeproj
 ```
 The `.xcodeproj` is generated from `project.yml` and is not committed.
 
+## Try it in a browser (no Mac needed)
+Every push to `main` runs the **Simulator build** workflow, which uploads an artifact named `SwingScreener-download`. Download it from the workflow run's Artifacts, extract it once so you have `UPLOAD-THIS-to-Appetize.zip`, and upload that file (without unzipping it) at https://appetize.io/upload to run the app in a simulated iPhone.
+
+## Run on your iPhone with a free Apple ID
+1. In Xcode, open **Settings > Accounts** and add your Apple ID.
+2. Select the **SwingScreener** target, open **Signing & Capabilities**, and choose your Personal Team.
+3. Plug in the iPhone, pick it as the run destination, and press Run.
+4. On the iPhone, turn on **Settings > Privacy & Security > Developer Mode**, and trust the developer under **Settings > General > VPN & Device Management**.
+
+Free-account installs expire after 7 days; press Run again to reinstall.
+
 ## Rules
 - API keys never ship in the app. The app talks only to the hosted SOE API.
 - The plan, progress and session prompt live in `docs/`.

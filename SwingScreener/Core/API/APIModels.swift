@@ -177,6 +177,13 @@ struct MarketData: Decodable, Hashable {
     let avgDollarVolume20d: Double?
     let return20d: Double?
     let relativeVolume: Double?
+
+    // `.convertFromSnakeCase` capitalizes each component, so "avg_dollar_volume_20d"
+    // arrives as "avgDollarVolume20D"; map that key back explicitly.
+    enum CodingKeys: String, CodingKey {
+        case price, sma20, sma50, sma200, rsi14, atr14, high52w, low52w, return20d, relativeVolume
+        case avgDollarVolume20d = "avgDollarVolume20D"
+    }
 }
 
 struct EmptyResponse: Decodable {}

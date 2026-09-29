@@ -1,0 +1,8 @@
+{
+ "error": {
+  "code": "TICKER_NOT_IN_SCAN",
+  "message": "NOPE was not part of the latest completed scan.",
+  "retryable": false,
+  "request_id": "8170d53c-cc6f-4cb9-94ca-62d03a717785"
+ }
+}

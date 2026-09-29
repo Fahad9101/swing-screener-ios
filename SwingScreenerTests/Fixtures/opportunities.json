@@ -1,0 +1,708 @@
+{
+ "scan_run_id": "59e9f80d-97f8-4419-b632-269c8d6a1608",
+ "data_as_of": "2026-09-29T09:47:47.459667",
+ "stale": false,
+ "count": 3,
+ "limit": 3,
+ "offset": 0,
+ "data": [
+  {
+   "ticker": "RERATE",
+   "company": "Synthetic Recovery Co",
+   "sector": "Industrials",
+   "is_biotech": false,
+   "price": 45.6787,
+   "market_cap": 12000000000.0,
+   "primary_scanner": "RERATING",
+   "secondary_scanners": [],
+   "scores": {
+    "catalyst": {
+     "score": 20.0,
+     "maximum": 25.0,
+     "components": {
+      "type": "EARNINGS",
+      "title": "Synthetic quarterly earnings",
+      "materiality": 7,
+      "timing": 5,
+      "date_confidence": 5,
+      "surprise": 3,
+      "days": 18
+     },
+     "available": true,
+     "available_points": null
+    },
+    "fundamental": {
+     "score": 15.0,
+     "maximum": 20.0,
+     "components": {
+      "revenue_trajectory": 3,
+      "margin_trajectory": 4,
+      "eps_fcf_trajectory": 4,
+      "business_quality": 4
+     },
+     "available": true,
+     "available_points": 20.0
+    },
+    "valuation": {
+     "score": 14.0,
+     "maximum": 20.0,
+     "components": {
+      "expected_swing_upside": 8,
+      "fundamental_valuation_support": 6,
+      "upside_input": 0.28,
+      "undervaluation_input": 0.19
+     },
+     "available": true,
+     "available_points": 20.0
+    },
+    "technical": {
+     "score": 8.0,
+     "maximum": 15.0,
+     "components": {
+      "trend": 4,
+      "pullback": 4,
+      "rsi": 0,
+      "volume": 0
+     },
+     "available": true,
+     "available_points": 15.0
+    },
+    "revisions": {
+     "score": 9.0,
+     "maximum": 10.0,
+     "components": {
+      "eps_revisions": 5,
+      "revenue_ebitda_revisions": 4,
+      "eps_breadth": 0.8,
+      "revenue_breadth": 0.7,
+      "ebitda_breadth": 0.75
+     },
+     "available": true,
+     "available_points": 10.0
+    },
+    "balance_sheet": {
+     "score": 4.0,
+     "maximum": 5.0,
+     "components": {
+      "cash": 2000000000.0,
+      "debt": 2300000000.0,
+      "ebitda": 1500000000.0
+     },
+     "available": true,
+     "available_points": null
+    },
+    "liquidity": {
+     "score": 5.0,
+     "maximum": 5.0,
+     "components": {
+      "dollar_volume": 3,
+      "institutional_ownership": 2,
+      "institutional_ownership_available": true
+     },
+     "available": true,
+     "available_points": 5.0
+    },
+    "base_opportunity_score": 75.0,
+    "penalty_points": 0,
+    "multi_scanner_bonus": 0,
+    "opportunity_score": 75.0
+   },
+   "market_regime": "GREEN",
+   "scanner_conditions": [
+    {
+     "scanner": "RERATING",
+     "qualified": true,
+     "conditions": {
+      "forward_eps_growth": true,
+      "revenue_growth_qoq": true,
+      "margin_improving": true,
+      "fcf_or_ebitda_improving": true,
+      "positive_revisions": true,
+      "valuation_discount": true
+     },
+     "conditions_met": 6,
+     "conditions_total": 6,
+     "evidence": {
+      "technical_requirement": true,
+      "price": 45.6787,
+      "sma50": 46.789362000000004,
+      "sma200": 43.5712575
+     },
+     "evaluation_status": "COMPLETE",
+     "incomplete_fields": []
+    },
+    {
+     "scanner": "GROWTH_PULLBACK",
+     "qualified": false,
+     "conditions": {
+      "revenue_growth": false,
+      "growth_driver": true,
+      "no_guidance_deterioration": true,
+      "no_strong_negative_revisions": true,
+      "balance_sheet_not_distressed": true
+     },
+     "conditions_met": 4,
+     "conditions_total": 5,
+     "evidence": {
+      "driver_conditions": {
+       "forward_eps_growth": true,
+       "fcf_growth": true,
+       "margin_expansion": true,
+       "forward_ebitda_growth": true
+      },
+      "pullback_pct": 0.06116765457878775,
+      "preferred_pullback": true,
+      "sweet_spot": false,
+      "large_cap_threshold_used": false
+     },
+     "evaluation_status": "COMPLETE",
+     "incomplete_fields": []
+    },
+    {
+     "scanner": "BIOTECH_CATALYST",
+     "qualified": false,
+     "conditions": {
+      "is_biotech": false,
+      "cash_runway_eligible": null,
+      "technical_path_1": true,
+      "technical_path_2": false,
+      "catalyst_exception_path_3": false,
+      "verified_grade_a_or_b_catalyst": true
+     },
+     "conditions_met": 2,
+     "conditions_total": 6,
+     "evidence": {
+      "cash_runway_months": null,
+      "financing_secured": null,
+      "runway_reject": false,
+      "nearest_grade_a_days": 18
+     },
+     "evaluation_status": "COMPLETE",
+     "incomplete_fields": []
+    }
+   ],
+   "penalties": [],
+   "automatic_rejections": [],
+   "data_completeness": {
+    "market_data": true,
+    "fundamentals": false,
+    "estimates": false,
+    "catalyst_data": true,
+    "available_score_points": 100.0,
+    "total_score_points": 100.0,
+    "market_data_pct": 100.0,
+    "fundamental_pct": 57.89,
+    "estimate_pct": 50.0,
+    "catalyst_pct": 100.0,
+    "overall_pct": 76.97,
+    "stale_fields": [],
+    "missing_fields": {
+     "market": [],
+     "fundamental": [
+      "revenue",
+      "forward_revenue_growth",
+      "eps",
+      "forward_eps",
+      "gross_margin",
+      "net_debt",
+      "interest_coverage",
+      "shares_outstanding"
+     ],
+     "estimate": [
+      "forward_revenue",
+      "forward_ebitda",
+      "eps_revision_30d",
+      "eps_revision_90d",
+      "revenue_revision_30d",
+      "revenue_revision_90d",
+      "ebitda_revision_30d",
+      "ebitda_revision_90d"
+     ],
+     "calendar": []
+    },
+    "availability": {
+     "market": "available",
+     "fundamentals": "partial",
+     "estimates": "partial",
+     "scored_catalysts": "available",
+     "calendar": "unavailable"
+    }
+   },
+   "created_at": "2026-09-29T09:47:47.433830Z"
+  },
+  {
+   "ticker": "GROWTH",
+   "company": "Synthetic Quality Co",
+   "sector": "Industrials",
+   "is_biotech": false,
+   "price": 54.2161,
+   "market_cap": 25000000000.0,
+   "primary_scanner": "GROWTH_PULLBACK",
+   "secondary_scanners": [],
+   "scores": {
+    "catalyst": {
+     "score": 20.0,
+     "maximum": 25.0,
+     "components": {
+      "type": "EARNINGS",
+      "title": "Synthetic quarterly earnings",
+      "materiality": 7,
+      "timing": 5,
+      "date_confidence": 5,
+      "surprise": 3,
+      "days": 32
+     },
+     "available": true,
+     "available_points": null
+    },
+    "fundamental": {
+     "score": 15.0,
+     "maximum": 20.0,
+     "components": {
+      "revenue_trajectory": 3,
+      "margin_trajectory": 3,
+      "eps_fcf_trajectory": 4,
+      "business_quality": 5
+     },
+     "available": true,
+     "available_points": 20.0
+    },
+    "valuation": {
+     "score": 10.0,
+     "maximum": 20.0,
+     "components": {
+      "expected_swing_upside": 6,
+      "fundamental_valuation_support": 4,
+      "upside_input": 0.24,
+      "undervaluation_input": 0.12
+     },
+     "available": true,
+     "available_points": 20.0
+    },
+    "technical": {
+     "score": 8.0,
+     "maximum": 15.0,
+     "components": {
+      "trend": 4,
+      "pullback": 4,
+      "rsi": 0,
+      "volume": 0
+     },
+     "available": true,
+     "available_points": 15.0
+    },
+    "revisions": {
+     "score": 8.0,
+     "maximum": 10.0,
+     "components": {
+      "eps_revisions": 4,
+      "revenue_ebitda_revisions": 4,
+      "eps_breadth": 0.7777777777777778,
+      "revenue_breadth": 0.75,
+      "ebitda_breadth": 0.7777777777777778
+     },
+     "available": true,
+     "available_points": 10.0
+    },
+    "balance_sheet": {
+     "score": 5.0,
+     "maximum": 5.0,
+     "components": {
+      "cash": 1900000000.0,
+      "debt": 400000000.0,
+      "ebitda": 1400000000.0
+     },
+     "available": true,
+     "available_points": null
+    },
+    "liquidity": {
+     "score": 5.0,
+     "maximum": 5.0,
+     "components": {
+      "dollar_volume": 3,
+      "institutional_ownership": 2,
+      "institutional_ownership_available": true
+     },
+     "available": true,
+     "available_points": 5.0
+    },
+    "base_opportunity_score": 71.0,
+    "penalty_points": 0,
+    "multi_scanner_bonus": 0,
+    "opportunity_score": 71.0
+   },
+   "market_regime": "GREEN",
+   "scanner_conditions": [
+    {
+     "scanner": "RERATING",
+     "qualified": false,
+     "conditions": {
+      "forward_eps_growth": true,
+      "revenue_growth_qoq": true,
+      "margin_improving": true,
+      "fcf_or_ebitda_improving": true,
+      "positive_revisions": true,
+      "valuation_discount": true
+     },
+     "conditions_met": 6,
+     "conditions_total": 6,
+     "evidence": {
+      "technical_requirement": false,
+      "price": 54.2161,
+      "sma50": 57.70049,
+      "sma200": 53.240323
+     },
+     "evaluation_status": "COMPLETE",
+     "incomplete_fields": []
+    },
+    {
+     "scanner": "GROWTH_PULLBACK",
+     "qualified": true,
+     "conditions": {
+      "revenue_growth": true,
+      "growth_driver": true,
+      "no_guidance_deterioration": true,
+      "no_strong_negative_revisions": true,
+      "balance_sheet_not_distressed": true
+     },
+     "conditions_met": 5,
+     "conditions_total": 5,
+     "evidence": {
+      "driver_conditions": {
+       "forward_eps_growth": true,
+       "fcf_growth": true,
+       "margin_expansion": true,
+       "forward_ebitda_growth": true
+      },
+      "pullback_pct": 0.10618412744469306,
+      "preferred_pullback": true,
+      "sweet_spot": true,
+      "large_cap_threshold_used": true
+     },
+     "evaluation_status": "COMPLETE",
+     "incomplete_fields": []
+    },
+    {
+     "scanner": "BIOTECH_CATALYST",
+     "qualified": false,
+     "conditions": {
+      "is_biotech": false,
+      "cash_runway_eligible": null,
+      "technical_path_1": true,
+      "technical_path_2": false,
+      "catalyst_exception_path_3": false,
+      "verified_grade_a_or_b_catalyst": true
+     },
+     "conditions_met": 2,
+     "conditions_total": 6,
+     "evidence": {
+      "cash_runway_months": null,
+      "financing_secured": null,
+      "runway_reject": false,
+      "nearest_grade_a_days": 32
+     },
+     "evaluation_status": "COMPLETE",
+     "incomplete_fields": []
+    }
+   ],
+   "penalties": [],
+   "automatic_rejections": [],
+   "data_completeness": {
+    "market_data": true,
+    "fundamentals": false,
+    "estimates": false,
+    "catalyst_data": true,
+    "available_score_points": 100.0,
+    "total_score_points": 100.0,
+    "market_data_pct": 100.0,
+    "fundamental_pct": 57.89,
+    "estimate_pct": 50.0,
+    "catalyst_pct": 100.0,
+    "overall_pct": 76.97,
+    "stale_fields": [],
+    "missing_fields": {
+     "market": [],
+     "fundamental": [
+      "revenue",
+      "forward_revenue_growth",
+      "eps",
+      "forward_eps",
+      "gross_margin",
+      "net_debt",
+      "interest_coverage",
+      "shares_outstanding"
+     ],
+     "estimate": [
+      "forward_revenue",
+      "forward_ebitda",
+      "eps_revision_30d",
+      "eps_revision_90d",
+      "revenue_revision_30d",
+      "revenue_revision_90d",
+      "ebitda_revision_30d",
+      "ebitda_revision_90d"
+     ],
+     "calendar": []
+    },
+    "availability": {
+     "market": "available",
+     "fundamentals": "partial",
+     "estimates": "partial",
+     "scored_catalysts": "available",
+     "calendar": "unavailable"
+    }
+   },
+   "created_at": "2026-09-29T09:47:47.447857Z"
+  },
+  {
+   "ticker": "BIOCAT",
+   "company": "Synthetic Biotech Co",
+   "sector": "Health Care",
+   "is_biotech": true,
+   "price": 71.6216,
+   "market_cap": 4000000000.0,
+   "primary_scanner": "BIOTECH_CATALYST",
+   "secondary_scanners": [],
+   "scores": {
+    "catalyst": {
+     "score": 24.0,
+     "maximum": 25.0,
+     "components": {
+      "type": "CLINICAL_DATA",
+      "title": "Synthetic Phase 3 readout",
+      "materiality": 10,
+      "timing": 5,
+      "date_confidence": 5,
+      "surprise": 4,
+      "days": 21
+     },
+     "available": true,
+     "available_points": null
+    },
+    "fundamental": {
+     "score": 18.0,
+     "maximum": 20.0,
+     "components": {
+      "cash_runway": 5,
+      "clinical_evidence_quality": 4,
+      "pipeline_event_importance": 5,
+      "external_validation": 4
+     },
+     "available": true,
+     "available_points": 20.0
+    },
+    "valuation": {
+     "score": 10.0,
+     "maximum": 20.0,
+     "components": {
+      "expected_swing_upside": 10,
+      "fundamental_valuation_support": null,
+      "upside_input": 0.35,
+      "undervaluation_input": null
+     },
+     "available": true,
+     "available_points": 12.0
+    },
+    "technical": {
+     "score": 8.0,
+     "maximum": 15.0,
+     "components": {
+      "trend": 4,
+      "pullback": 4,
+      "rsi": 0,
+      "volume": 0
+     },
+     "available": true,
+     "available_points": 15.0
+    },
+    "revisions": {
+     "score": null,
+     "maximum": 10.0,
+     "components": {
+      "eps_revisions": null,
+      "revenue_ebitda_revisions": null,
+      "eps_breadth": null,
+      "revenue_breadth": null,
+      "ebitda_breadth": null
+     },
+     "available": false,
+     "available_points": 0.0
+    },
+    "balance_sheet": {
+     "score": 5.0,
+     "maximum": 5.0,
+     "components": {
+      "cash": 1300000000.0,
+      "debt": 100000000.0,
+      "ebitda": null
+     },
+     "available": true,
+     "available_points": null
+    },
+    "liquidity": {
+     "score": 5.0,
+     "maximum": 5.0,
+     "components": {
+      "dollar_volume": 3,
+      "institutional_ownership": 2,
+      "institutional_ownership_available": true
+     },
+     "available": true,
+     "available_points": 5.0
+    },
+    "base_opportunity_score": 70.0,
+    "penalty_points": 0,
+    "multi_scanner_bonus": 0,
+    "opportunity_score": 70.0
+   },
+   "market_regime": "GREEN",
+   "scanner_conditions": [
+    {
+     "scanner": "RERATING",
+     "qualified": false,
+     "conditions": {
+      "forward_eps_growth": null,
+      "revenue_growth_qoq": null,
+      "margin_improving": null,
+      "fcf_or_ebitda_improving": null,
+      "positive_revisions": null,
+      "valuation_discount": null
+     },
+     "conditions_met": 0,
+     "conditions_total": 6,
+     "evidence": {
+      "technical_requirement": true,
+      "price": 71.6216,
+      "sma50": 72.956446,
+      "sma200": 68.46677150000001
+     },
+     "evaluation_status": "DATA_INCOMPLETE",
+     "incomplete_fields": [
+      "forward_eps_growth",
+      "revenue_growth_qoq",
+      "margin_improving",
+      "fcf_or_ebitda_improving",
+      "positive_revisions",
+      "valuation_discount"
+     ]
+    },
+    {
+     "scanner": "GROWTH_PULLBACK",
+     "qualified": false,
+     "conditions": {
+      "revenue_growth": null,
+      "growth_driver": null,
+      "no_guidance_deterioration": null,
+      "no_strong_negative_revisions": null,
+      "balance_sheet_not_distressed": true
+     },
+     "conditions_met": 1,
+     "conditions_total": 5,
+     "evidence": {
+      "driver_conditions": {
+       "forward_eps_growth": null,
+       "fcf_growth": null,
+       "margin_expansion": null,
+       "forward_ebitda_growth": null
+      },
+      "pullback_pct": 0.053948310433282465,
+      "preferred_pullback": true,
+      "sweet_spot": false,
+      "large_cap_threshold_used": false
+     },
+     "evaluation_status": "DATA_INCOMPLETE",
+     "incomplete_fields": [
+      "revenue_growth",
+      "growth_driver",
+      "no_guidance_deterioration",
+      "no_strong_negative_revisions"
+     ]
+    },
+    {
+     "scanner": "BIOTECH_CATALYST",
+     "qualified": true,
+     "conditions": {
+      "is_biotech": true,
+      "cash_runway_eligible": true,
+      "technical_path_1": true,
+      "technical_path_2": false,
+      "catalyst_exception_path_3": false,
+      "verified_grade_a_or_b_catalyst": true
+     },
+     "conditions_met": 4,
+     "conditions_total": 6,
+     "evidence": {
+      "cash_runway_months": 26.0,
+      "financing_secured": false,
+      "runway_reject": false,
+      "nearest_grade_a_days": 21
+     },
+     "evaluation_status": "COMPLETE",
+     "incomplete_fields": []
+    }
+   ],
+   "penalties": [],
+   "automatic_rejections": [],
+   "data_completeness": {
+    "market_data": true,
+    "fundamentals": false,
+    "estimates": false,
+    "catalyst_data": true,
+    "available_score_points": 82.0,
+    "total_score_points": 100.0,
+    "market_data_pct": 100.0,
+    "fundamental_pct": 21.05,
+    "estimate_pct": 6.25,
+    "catalyst_pct": 100.0,
+    "overall_pct": 56.83,
+    "stale_fields": [],
+    "missing_fields": {
+     "market": [],
+     "fundamental": [
+      "revenue",
+      "revenue_growth",
+      "revenue_growth_qoq",
+      "forward_revenue_growth",
+      "eps",
+      "forward_eps",
+      "eps_growth",
+      "gross_margin",
+      "operating_margin",
+      "operating_margin_expansion_bps",
+      "fcf",
+      "ebitda",
+      "net_debt",
+      "interest_coverage",
+      "shares_outstanding"
+     ],
+     "estimate": [
+      "forward_eps_growth",
+      "forward_revenue",
+      "forward_ebitda",
+      "eps_revision_30d",
+      "eps_revision_90d",
+      "revenue_revision_30d",
+      "revenue_revision_90d",
+      "ebitda_revision_30d",
+      "ebitda_revision_90d",
+      "eps_up_revisions",
+      "eps_down_revisions",
+      "revenue_up_revisions",
+      "revenue_down_revisions",
+      "ebitda_up_revisions",
+      "ebitda_down_revisions"
+     ],
+     "calendar": []
+    },
+    "availability": {
+     "market": "available",
+     "fundamentals": "partial",
+     "estimates": "partial",
+     "scored_catalysts": "available",
+     "calendar": "unavailable"
+    }
+   },
+   "created_at": "2026-09-29T09:47:47.453149Z"
+  }
+ ]
+}

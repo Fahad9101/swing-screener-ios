@@ -17,7 +17,7 @@ final class CatalystCalendarModel {
     }
 
     /// Events grouped by day, in date order.
-    static func grouped(_ events: [CatalystEvent]) -> [CatalystDay] {
+    nonisolated static func grouped(_ events: [CatalystEvent]) -> [CatalystDay] {
         let groups = Dictionary(grouping: events) { $0.day ?? "Undated" }
         return groups.keys.sorted().map { CatalystDay(day: $0, events: groups[$0] ?? []) }
     }

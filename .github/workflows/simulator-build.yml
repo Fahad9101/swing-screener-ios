@@ -1,0 +1,40 @@
+name: Simulator build
+
+# Builds an unsigned iOS Simulator app for trying Swing Screener in the browser
+# (for example on appetize.io) without a Mac or an Apple Developer account.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Build for the iOS Simulator (arm64 and x86_64)
+        run: |
+          xcodegen generate
+          xcodebuild build \
+            -project SwingScreener.xcodeproj \
+            -scheme SwingScreener \
+            -configuration Release \
+            -sdk iphonesimulator \
+            -derivedDataPath build \
+            ARCHS="arm64 x86_64" ONLY_ACTIVE_ARCH=NO \
+            CODE_SIGNING_ALLOWED=NO
+      - name: Zip the app
+        run: |
+          cd build/Build/Products/Release-iphonesimulator
+          ditto -c -k --sequesterRsrc --keepParent SwingScreener.app "$GITHUB_WORKSPACE/SwingScreener-simulator.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SwingScreener-simulator
+          path: SwingScreener-simulator.zip
+          retention-days: 30
